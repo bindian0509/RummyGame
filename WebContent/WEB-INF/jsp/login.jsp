@@ -45,7 +45,7 @@ td {
 					<tr><td colspan="2"></td></tr>
 					<tr>
 						<td>&nbsp;</td>
-						<td><input type="submit" value="Save" /></td>
+						<td><input type="submit" value="Login" /></td>
 					</tr>
 					<tr><td colspan="2"></td></tr>
 					<tr><td colspan="2">New User Click Here to <a href="register">Sign Up </a><td></tr>

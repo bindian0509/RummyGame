@@ -50,13 +50,15 @@ td {
 						<td>Skill Level :</td>
 						<td><form:select path="playerType" items="${map.typeList}" /></td>
 					</tr>
+					<tr><td colspan="2"></td></tr>
 					<tr>
 						<td>&nbsp;</td>
-						<td><input type="submit" value="Save" /></td>
+						<td><input type="submit" value="Register" /></td>
 					</tr>
+					<tr><td colspan="2"></td></tr>
 					<tr>
 						
-						<td colspan="2"><a href="getList">Click Here to See Player List</a></td>
+						<td colspan="2">Already a member <a href="login">Login here!</a></td>
 					</tr>
 				</table>
 			</form:form>
