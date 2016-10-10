@@ -1,11 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-<title>MOBIKWIK | BHARAT VERMA | RUMMY GAME | PLAYER LIST</title>
+<title>MOBIKWIK | BHARAT VERMA | RUMMY GAME | PLAYER DASHBOARD </title>
 <style>
 body {
 	font-size: 20px;
@@ -16,7 +15,7 @@ body {
 td {
 	font-size: 12px;
 	color: black;
-	width: 100px;
+	width: 33%;
 	height: 22px;
 	text-align: center;
 }
@@ -31,41 +30,19 @@ td {
 </head>
 <body>
 	<center>
-		<br /> <br /> <br /> <b>Player
-			List | Mobikwik Rummy Game </b><br /> <br />
-			
-		
-
-		<table border="1">
+		<br /> <br /> <br /> <b>Player Dashboard | Mobikwik Rummy Game </b><br /> <br />					
+		<table>
 			<tr>
-				<td class="heading">Player Id</td>
-				<td class="heading">Player Name</td>
-				<td class="heading">Games Played</td>
-				<td class="heading">Total Score</td>
-				<td class="heading">Creation Time</td>
-				<td class="heading">Email</td>
-				<td class="heading">Password</td>
-				<td class="heading">Status</td>
-				<td class="heading">Type</td>
-				<td class="heading">Edit</td>
-				<td class="heading">Delete</td>
+				<td><a href="newgame">Create New Game</a></td>
+				<td><a href="invite">Invite player for Game</a></td>
+				<td><a href="leaderboard">Check Scores</a></td>
 			</tr>
-			<c:forEach var="player" items="${playerList}">
-				<tr>
-					<td>${player.playerId}</td>
-					<td>${player.playerName}</td>
-					<td>${player.gamesPlayed}</td>
-					<td>${player.score}</td>
-					<td>${player.creationTime}</td>
-					<td>${player.playerEmail}</td>
-					<td>${player.playerPassword}</td>
-					<td>${player.status}</td>
-					<td>${player.playerType}</td>
-					<td><a href="edit?id=${player.playerId}">Edit</a></td>
-					<td><a href="delete?id=${player.playerId}">Delete</a></td>
-				</tr>
-			</c:forEach>
-			<tr><td colspan="11"><a href="register">Add New Player</a></td></tr>
+			<tr><td colspan="3"></td></tr>
+			<tr><td colspan="3"></td></tr>
+			<tr><td colspan="3"></td></tr>
+			<tr><td colspan="3"><a href="play">Continue Playing Game</a></td></tr>
+			<tr><td colspan="3"></td></tr>
+			<tr><td colspan="3"></td></tr>
 		</table>
 
 	</center>

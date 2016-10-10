@@ -19,4 +19,5 @@ public interface PlayerService {
 	
 	public boolean loginPlayer (String email, String password);
 	
+	public List<Player> getPlayerRankings();
 }

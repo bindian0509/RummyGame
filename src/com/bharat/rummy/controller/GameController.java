@@ -58,14 +58,21 @@ public class GameController {
 	public String loginPlayer(@ModelAttribute Player player) {
 		
 		if(playerService.loginPlayer(player.getPlayerEmail(), player.getPlayerPassword())) 		
-			return "redirect:/getList";
+			return "redirect:/dashboard";
 		else
 			return "redirect:/register";
 	}
 	
 	@RequestMapping("/dashboard")
-	public ModelAndView dashboard() {
-		List<Player> playerList = playerService.getPlayerList();
-		return new ModelAndView("playerList", "playerList", playerList);
+	public ModelAndView dashboard(@ModelAttribute Player player) {		
+		return new ModelAndView("dashboard");
 	}
+	
+	@RequestMapping("/leaderboard")
+	public ModelAndView leaderboard() {		
+		List<Player> playerList = playerService.getPlayerRankings();
+		return new ModelAndView("leaderboard", "playerList", playerList);
+	}
+	
+	
 }

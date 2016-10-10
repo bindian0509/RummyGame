@@ -1,6 +1,5 @@
 package com.bharat.rummy.dao;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -73,4 +72,21 @@ public class PlayerDaoImpl implements PlayerDao {
 			return false;
 		}
 	}
+	
+	@Override
+	public List<Player> getPlayerRankings() {
+		
+		List<Player> playerList = getPlayerList();
+		
+		int relativeScore = 0;
+		for(Player p : playerList) {
+			
+			relativeScore = (p.getScore()/p.getGamesPlayed())*100;
+			System.out.println(relativeScore);
+		}
+		
+		
+		return playerList;
+	}
+	
 }

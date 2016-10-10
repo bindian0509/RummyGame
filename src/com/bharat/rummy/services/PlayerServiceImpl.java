@@ -30,5 +30,10 @@ public class PlayerServiceImpl implements PlayerService {
 	public boolean loginPlayer(String email, String password) {
 		return playerdao.loginPlayer(email, password);
 	}
+	
+	@Override
+	public List<Player> getPlayerRankings() {
+		return playerdao.getPlayerRankings();
+	}
 
 }
