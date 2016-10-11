@@ -56,7 +56,7 @@ public class PlayerDaoImpl implements PlayerDao {
 	}
 	
 	@Override
-	public boolean loginPlayer(String email, String password) {
+	public int loginPlayer(String email, String password) {
 		List<Player> playerList = new ArrayList<Player>();
 		String sql = "select * from player where email= '" + email+ "' and password='"+ password+"'";
 		_logger.info(sql);
@@ -65,11 +65,11 @@ public class PlayerDaoImpl implements PlayerDao {
 		playerList = jdbcTemplate.query(sql, new PlayerRowMapper());
 		System.out.println(Arrays.deepToString(playerList.toArray()));
 		if(playerList.size() == 0)
-			return false;
+			return 0;
 		if(playerList.get(0).getPlayerId() > 0) {
-			return true;
+			return playerList.get(0).getPlayerId();
 		} else {
-			return false;
+			return 0;
 		}
 	}
 	
@@ -87,6 +87,15 @@ public class PlayerDaoImpl implements PlayerDao {
 		
 		
 		return playerList;
+	}
+	
+	@Override
+	public boolean validateLogin(Player player) {
+		boolean login = true;
+		
+		
+		
+		return login;
 	}
 	
 }

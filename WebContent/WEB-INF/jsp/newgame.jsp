@@ -1,15 +1,16 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
 <html>
+<head>
+<title>MOBIKWIK | BHARAT VERMA | RUMMY GAME | NEW GAME</title>
 <spring:url value="/resources/static/public/main.css" var="maincss" />
 <link href="${maincss}" rel="stylesheet" />
-<head>
-<title>MOBIKWIK | BHARAT VERMA | RUMMY GAME | ADD PLAYER</title>
 </head>
 <body>
 	<center>
-		<br /> <br /> <br /> <b>Mobikwik Rummy Game | Player Registration Form </b> <br />
+		<br /> <br /> <br /> <b>Mobikwik Rummy Game | New Game </b> <br />
 		<br />
 		<div>
 			<form:form method="post" action="/insertPlayer" modelAttribute="player">

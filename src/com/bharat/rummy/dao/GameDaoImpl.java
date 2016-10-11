@@ -10,24 +10,42 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.bharat.rummy.domain.Game;
 import com.bharat.rummy.jdbc.GameRowMapper;
+import com.bharat.rummy.jdbc.PlayerRowMapper;
 
 public class GameDaoImpl implements GameDao {
 
 	@Autowired
 	DataSource dataSource;
 
-	public void create(Game game) {
+	@Override
+	public void newGame(String playerId) {
 
-		String sql = "INSERT INTO game " + "(player_id_1, player_id_2, player_id_3, status, game_result) " + "VALUES "
+		String sql = "INSERT INTO game " + "(player_id_1, status, game_result) " + "VALUES "
 				+ "(?,?,?,?,?)";
 
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
-		jdbcTemplate.update(sql, new Object[] { game.getFirstPlayer(), game.getSecondPlayer(), game.getThirdPlayer(),
-				game.getStatus(), game.getResult() });
+		jdbcTemplate.update(sql, new Object[] { playerId, "NEW", "FRESH" });
 
 	}
+	
+	@Override
+	public void startGame (Game game) {
+		
+	}
+	
+	@Override
+	public List<Game> getGamesFromPlayerId (String playerId) {
+		List<Game> gameList = new ArrayList<Game>();
+		String sql = "select * from game";
+		System.out.println(sql);
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		gameList = jdbcTemplate.query(sql, new GameRowMapper());
+		return gameList;
+	}
 
+	
+	/*
 	@Override
 	public Game getGame(String gameId) {
 		List<Game> gameList = new ArrayList<Game>();
@@ -35,6 +53,6 @@ public class GameDaoImpl implements GameDao {
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		gameList = jdbcTemplate.query(sql, new GameRowMapper());
 		return gameList.get(0);
-	}
+	}*/
 
 }

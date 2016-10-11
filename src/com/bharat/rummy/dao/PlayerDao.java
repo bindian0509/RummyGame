@@ -15,7 +15,9 @@ public interface PlayerDao {
 
 	public Player getPlayer(String id);
 	
-	public boolean loginPlayer(String email, String password);
+	public int loginPlayer(String email, String password);
 	
 	public List<Player> getPlayerRankings();
+	
+	public boolean validateLogin(Player player);
 }

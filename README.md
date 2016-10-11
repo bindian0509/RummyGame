@@ -9,7 +9,9 @@ RummyGameSchema.sql
 # Prerequisites
 
 Apache Tomcat Version - 8.0 
+
 Mysql Version - 5.5 
+
 Java 1.8 
 
 Spring 4.0.6.RELEASE 

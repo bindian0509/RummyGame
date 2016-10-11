@@ -1,46 +1,28 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
 <html>
 <head>
 <title>MOBIKWIK | BHARAT VERMA | RUMMY GAME | LOGIN PLAYER</title>
-<style>
-body {
-	font-size: 20px;
-	color: teal;
-	font-family: verdana;
-}
-
-td {
-	font-size: 12px;
-	color: black;
-	width: 100px;
-	height: 22px;
-	text-align: left;
-}
-
-.heading {
-	font-size: 14px;
-	color: white;
-	font: bold;
-	background-color: orange;
-	border: thick;
-}
-</style>
+<spring:url value="/resources/static/public/main.css" var="maincss" />
+<link href="${maincss}" rel="stylesheet" />
 </head>
 <body>
 	<center>
 		<br /> <br /> <br /> <b>Mobikwik Rummy Game | Player Login </b> <br />
 		<br />
 		<div>
-			<form:form method="post" action="/loginPlayer" modelAttribute="player">
+		<span><font class="error-msg">${message}</font></span>
+			<form:form method="post" action="/login"  modelAttribute="loginBean">
 				<table>
 					<tr>
 						<td>Email :</td>
-						<td><form:input path="playerEmail" /></td>
+						<td><form:input id="username" name="username" path="" /></td>
 					</tr>
 					<tr>
 						<td>Password :</td>
-						<td><form:input type="password" path="playerPassword" /></td>
+						<td><form:password id="password" name="password" path="" /></td>
 					</tr>					
 					<tr><td colspan="2"></td></tr>
 					<tr>

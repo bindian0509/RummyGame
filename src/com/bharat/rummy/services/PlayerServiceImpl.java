@@ -27,13 +27,18 @@ public class PlayerServiceImpl implements PlayerService {
 	}
 
 	@Override
-	public boolean loginPlayer(String email, String password) {
+	public int loginPlayer(String email, String password) {
 		return playerdao.loginPlayer(email, password);
 	}
 	
 	@Override
 	public List<Player> getPlayerRankings() {
 		return playerdao.getPlayerRankings();
+	}
+	
+	@Override
+	public boolean validateLogin(Player player) {
+		return playerdao.validateLogin(player);
 	}
 
 }
