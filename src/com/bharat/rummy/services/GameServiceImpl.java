@@ -28,6 +28,6 @@ public class GameServiceImpl implements GameService{
 	
 	@Override
 	public List<Game> getGamesFromPlayerId (String playerId) {
-		return getGamesFromPlayerId(playerId);
+		return gamedao.getGamesFromPlayerId(playerId);
 	}
 }

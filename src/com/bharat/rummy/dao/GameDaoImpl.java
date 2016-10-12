@@ -37,7 +37,7 @@ public class GameDaoImpl implements GameDao {
 	@Override
 	public List<Game> getGamesFromPlayerId (String playerId) {
 		List<Game> gameList = new ArrayList<Game>();
-		String sql = "select * from game";
+		String sql = "select * from game where player_id_1="+playerId+" OR player_id_2="+playerId+" OR player_id_3="+playerId;
 		System.out.println(sql);
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		gameList = jdbcTemplate.query(sql, new GameRowMapper());

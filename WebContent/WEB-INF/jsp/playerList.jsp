@@ -3,31 +3,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
 <head>
 <title>MOBIKWIK | BHARAT VERMA | RUMMY GAME | PLAYER LIST</title>
-<style>
-body {
-	font-size: 20px;
-	color: teal;
-	font-family: Verdana;
-}
-
-td {
-	font-size: 12px;
-	color: black;
-	width: 100px;
-	height: 22px;
-	text-align: center;
-}
-.heading {
-	font-size: 14px;
-	color: white;
-	font: bold;
-	background-color: orange;
-	border: thick;
-}
-</style>
+<spring:url value="/resources/static/public/main.css" var="maincss" />
+<link href="${maincss}" rel="stylesheet" />
 </head>
 <body>
 	<center>
